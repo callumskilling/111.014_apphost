@@ -1,3 +1,8 @@
+const copyResult = () => {
+    const result = document.getElementById("displayResult").innerHTML.split('<br>').join('\n');
+    navigator.clipboard.writeText(result)
+}
+
 const dass = (input) => {
     //Input Error Checking, control flow starts with some helpful messages to user as what could be wrong with their input rather than unhelpful generic message
     const length = input.length;
