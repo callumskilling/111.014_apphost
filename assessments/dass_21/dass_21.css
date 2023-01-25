@@ -17,6 +17,8 @@ nav > ul > li > a {
     margin: 1rem;
     border-radius: 10px;
     padding-inline: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 }
 
 body {
