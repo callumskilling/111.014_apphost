@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight&display=swap');
+
+* {
+    font-family: 'Inter Tight', Century Gothic, sans-serif;
+}
+
+button {
+margin: 10px;
+}
+
+html {
+    background-color:white;
+    color:black;
+ }
+
+
+.container {
+    margin: 10px;
+}
+
+.inputArea {
+    border-radius: 10px;
+    color: #1c2333;
+    width: 90%;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}

@@ -1,0 +1,109 @@
+<html>
+
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.js"></script>
+    <div class="container">
+        <div class="main">
+            <h1 class="title">YSQ-3 Calculator</h1>
+            <form>
+                <label class="input" for="response">Paste YSQ-3 Response Below</label>
+                <br>
+                <textarea class="input inputArea" id="response" name="response" rows="6" cols="60"
+                    onkeyup="ysq(this.value)"></textarea>
+            </form>
+            <h2>Saving Results</h2>
+            <ul>
+                <li>Copy table and graphs to a word doc and save as a PDF. File in Records > Files.</li>
+                <li>You may have to screenshot the graphs by pressing Windows + Shift + S, be sure not to hover over the
+                    bars before you click copy otherwise the hover info will be in your image.</li>
+            </ul>
+            <button id="tableCopy" onClick="copyTable()">Click To Copy Table</button>
+            <table id="resultsTable">
+                <tr>
+                    <th>Schema</th>
+                    <th>Score</th>
+                </tr>
+                <tr>
+                    <td>Emotional Deprivation</td>
+                    <td id="edTd"></td>
+                </tr>
+                <tr>
+                    <td>Abandonment</td>
+                    <td id="abTd"></td>
+                </tr>
+                <tr>
+                    <td>Mistrust/Abuse</td>
+                    <td id="miTd"></td>
+                </tr>
+                <tr>
+                    <td>Social Isolation</td>
+                    <td id="siTd"></td>
+                </tr>
+                <tr>
+                    <td>Defectiveness/Shame</td>
+                    <td id="dsTd"></td>
+                </tr>
+                <tr>
+                    <td>Failure</td>
+                    <td id="faTd"></td>
+                </tr>
+                <tr>
+                    <td>Incompetence/Dependence</td>
+                    <td id="incTd"></td>
+                </tr>
+                <tr>
+                    <td>Vulnerability To Harm</td>
+                    <td id="vhTd"></td>
+                </tr>
+                <tr>
+                    <td>Enmeshment</td>
+                    <td id="enmTd"></td>
+                </tr>
+                <tr>
+                    <td>Subjugation</td>
+                    <td id="sbjTd"></td>
+                </tr>
+                <tr>
+                    <td>Self-Sacrifice</td>
+                    <td id="ssTd"></td>
+                </tr>
+                <tr>
+                    <td>Emotional Inhibition</td>
+                    <td id="eiTd"></td>
+                </tr>
+                <tr>
+                    <td>Unrelenting Standards</td>
+                    <td id="urTd"></td>
+                </tr>
+                <tr>
+                    <td>Entitlement</td>
+                    <td id="entTd"></td>
+                </tr>
+                <tr>
+                    <td>Insufficient Self-Control</td>
+                    <td id="iscTd"></td>
+                </tr>
+                <tr>
+                    <td>Admiration Seeking</td>
+                    <td id="asTd"></td>
+                </tr>
+                <tr>
+                    <td>Pessimism</td>
+                    <td id="pwTd"></td>
+                </tr>
+                <tr>
+                    <td>Self-Punitiveness</td>
+                    <td id="spTd"></td>
+                </tr>
+            </table>
+            <div>
+                <canvas id="barChart" style="max-width: 800px; max-height: 400px;"></canvas>
+            </div>
+            <div>
+                <canvas id="radarChart" style="max-width: 800px; max-height: 600px;"></canvas>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
