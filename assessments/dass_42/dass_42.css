@@ -6,7 +6,7 @@
     margin: 0;
 }
 
-.container {
+body {
     background: #2b343b;
     display: flex;
     height: 100%;
