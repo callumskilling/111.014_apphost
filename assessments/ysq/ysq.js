@@ -101,24 +101,24 @@ const ysq = (input) => {
     let pwScore = pwArr.reduce((previousValue, currentValue) => previousValue + currentValue)
     let spScore = spArr.reduce((previousValue, currentValue) => previousValue + currentValue)
 
-    document.getElementById("edTd").innerHTML = `${edScore} / 30 (${Math.round((edScore/30*100))}%)`;
-    document.getElementById("abTd").innerHTML = `${abScore} / 30 (${Math.round((abScore/30*100))}%)`;
-    document.getElementById("miTd").innerHTML = `${miScore} / 30 (${Math.round((miScore/30*100))}%)`;
-    document.getElementById("siTd").innerHTML = `${siScore} / 30 (${Math.round((siScore/30*100))}%)`;
-    document.getElementById("dsTd").innerHTML = `${dsScore} / 30 (${Math.round((dsScore/30*100))}%)`;
-    document.getElementById("faTd").innerHTML = `${faScore} / 30 (${Math.round((faScore/30*100))}%)`;
-    document.getElementById("incTd").innerHTML = `${incScore} / 30 (${Math.round((incScore/30*100))}%)`;
-    document.getElementById("vhTd").innerHTML = `${vhScore} / 30 (${Math.round((vhScore/30*100))}%)`;
-    document.getElementById("enmTd").innerHTML = `${enmScore} / 30 (${Math.round((enmScore/30*100))}%)`;
-    document.getElementById("sbjTd").innerHTML = `${sbjScore} / 30 (${Math.round((sbjScore/30*100))}%)`;
-    document.getElementById("ssTd").innerHTML = `${ssScore} / 30 (${Math.round((ssScore/30*100))}%)`;
-    document.getElementById("eiTd").innerHTML = `${eiScore} / 30 (${Math.round((eiScore/30*100))}%)`;
-    document.getElementById("urTd").innerHTML = `${urScore} / 30 (${Math.round((urScore/30*100))}%)`;
-    document.getElementById("entTd").innerHTML = `${entScore} / 30 (${Math.round((entScore/30*100))}%)`;
-    document.getElementById("iscTd").innerHTML = `${iscScore} / 30 (${Math.round((iscScore/30*100))}%)`;
-    document.getElementById("asTd").innerHTML = `${asScore} / 30 (${Math.round((asScore/30*100))}%)`;
-    document.getElementById("pwTd").innerHTML = `${pwScore} / 30 (${Math.round((pwScore/30*100))}%)`;
-    document.getElementById("spTd").innerHTML = `${spScore} / 30 (${Math.round((spScore/30*100))}%)`;
+    document.getElementById("edTd").innerHTML = `${edScore} / 30 (${Math.round((edScore / 30 * 100))}%)`;
+    document.getElementById("abTd").innerHTML = `${abScore} / 30 (${Math.round((abScore / 30 * 100))}%)`;
+    document.getElementById("miTd").innerHTML = `${miScore} / 30 (${Math.round((miScore / 30 * 100))}%)`;
+    document.getElementById("siTd").innerHTML = `${siScore} / 30 (${Math.round((siScore / 30 * 100))}%)`;
+    document.getElementById("dsTd").innerHTML = `${dsScore} / 30 (${Math.round((dsScore / 30 * 100))}%)`;
+    document.getElementById("faTd").innerHTML = `${faScore} / 30 (${Math.round((faScore / 30 * 100))}%)`;
+    document.getElementById("incTd").innerHTML = `${incScore} / 30 (${Math.round((incScore / 30 * 100))}%)`;
+    document.getElementById("vhTd").innerHTML = `${vhScore} / 30 (${Math.round((vhScore / 30 * 100))}%)`;
+    document.getElementById("enmTd").innerHTML = `${enmScore} / 30 (${Math.round((enmScore / 30 * 100))}%)`;
+    document.getElementById("sbjTd").innerHTML = `${sbjScore} / 30 (${Math.round((sbjScore / 30 * 100))}%)`;
+    document.getElementById("ssTd").innerHTML = `${ssScore} / 30 (${Math.round((ssScore / 30 * 100))}%)`;
+    document.getElementById("eiTd").innerHTML = `${eiScore} / 30 (${Math.round((eiScore / 30 * 100))}%)`;
+    document.getElementById("urTd").innerHTML = `${urScore} / 30 (${Math.round((urScore / 30 * 100))}%)`;
+    document.getElementById("entTd").innerHTML = `${entScore} / 30 (${Math.round((entScore / 30 * 100))}%)`;
+    document.getElementById("iscTd").innerHTML = `${iscScore} / 30 (${Math.round((iscScore / 30 * 100))}%)`;
+    document.getElementById("asTd").innerHTML = `${asScore} / 30 (${Math.round((asScore / 30 * 100))}%)`;
+    document.getElementById("pwTd").innerHTML = `${pwScore} / 30 (${Math.round((pwScore / 30 * 100))}%)`;
+    document.getElementById("spTd").innerHTML = `${spScore} / 30 (${Math.round((spScore / 30 * 100))}%)`;
 
     const schemaLabels = [
         "Emotional Deprivation",

@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <title>DASS 21 Calculator</title>
     <link rel="stylesheet" href="./dass_21.css">
+    <nav>
+        <ul>
+            <li><a href="../assessments.html">Pick Calculator 🧮</a></li>
+        </ul>
+    </nav>
 </head>
-<nav>
-    <ul>
-        <li><a href="../assessments.html">Pick Calculator 🧮</a></li>
-    </ul>
-</nav>
+
+
 <body>
     <div class="main">
         <form>
@@ -17,8 +19,8 @@
             <br>
             <textarea class="inputArea" id="response" name="response" rows="5" cols="40" onkeyup="dass(this.value)"
                 onclick="dass(this.value)"></textarea>
-                <button id="resultCopy" onClick="copyResult()">Click To Copy Result</button>
-                <p id="displayResult"></p>
+            <button id="resultCopy" onClick="copyResult()">Click To Copy Result</button>
+            <p id="displayResult"></p>
         </form>
     </div>
 
