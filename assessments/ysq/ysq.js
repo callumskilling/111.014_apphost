@@ -1,11 +1,3 @@
-const copyTable = () => {
-    const table = document.querySelector('#resultsTable')
-    const range = document.createRange();
-    range.selectNode(table);
-    window.getSelection().addRange(range);
-    navigator.clipboard.writeText(range)
-}
-
 const ysq = (input) => {
     if (input.length < 8500) {
         document.getElementById("displayResult").innerHTML = "";
