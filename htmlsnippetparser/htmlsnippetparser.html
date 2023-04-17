@@ -1,0 +1,149 @@
+<html>
+<head>
+<style>
+  body {
+    background-color: rgba(43, 52, 60, 1.00);
+    color: white;
+    font-family: "Segoe UI", sans-serif;
+  }
+
+  #container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  #left, #right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #textarea1, #textarea2 {
+    width: 400px;
+    height: 300px;
+    margin: 20px;
+    font-family: monospace;
+    padding: 5px;
+    border-radius: 5px;
+  }
+
+  #button1, #button2 {
+    width: 100px;
+    height: 40px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  #result1, #result2 {
+    width: 400px;
+    height: 200px;
+    margin: 20px;
+    overflow-y: scroll;
+    font-family: monospace;
+  }
+</style>
+</head>
+<body>
+<div id="container">
+  <div id="left">
+    <h2>Enter your HTML code here</h2>
+    <textarea id="textarea1" placeholder="Enter your HTML code here"></textarea>
+    <button id="button1" onclick="parseHTML()">Parse</button>
+    <div id="result1"></div>
+  </div>
+  <div id="right">
+    <h2>Enter your list of strings here</h2>
+    <textarea id="textarea2" placeholder="Enter your list of strings here"></textarea>
+    <button id="button2" onclick="compareStrings()">Compare</button>
+    <div id="result2"></div>
+  </div>
+</div>
+<script>
+   function parseHTML() {
+     // get the textarea value
+     let html = document.getElementById("textarea1").value;
+
+     // create a regex to match the strings between <p class="mb-3"> and </p>
+     let regex = /<p class="mb-3">(.*?)<\/p>/g;
+
+     // create an array to store the matched strings
+     let matches = [];
+
+     // loop through the html and find all the matches
+     let match;
+     while (match = regex.exec(html)) {
+       // get the index of the match in the html
+       let index = match.index;
+
+       // get the substring of the html from the index to the end
+       let substring = html.substring(index);
+
+       // create another regex to match the next string between <p class="small slightly-bigger"> and </p>
+       let regex2 = /<p class="small slightly-bigger">(.*?)<\/p>/;
+
+       // find the first match of the second regex in the substring
+       let match2 = regex2.exec(substring);
+
+       // if there is a match, append it to the first capture group with a dash
+       if (match2) {
+         match[1] += " - " + match2[1];
+       }
+
+       // alphabetise the matches
+       matches.sort();
+
+       // trim the first capture group and push it to the array
+       matches.push(match[1].trim());
+     }
+
+     // create a string to display the result
+     let result = "";
+
+     // loop through the matches and append them to the result string
+     for (let i = 0; i < matches.length; i++) {
+       result += matches[i] + "\n";
+     }
+
+      // display the result in the result div
+      document.getElementById("result1").innerText = result;
+     
+   }
+
+   function compareStrings() {
+     // get the parsed strings from the result div
+     let parsed = document.getElementById("result1").innerText;
+
+     // split the parsed strings by newline
+     let parsedArray = parsed.split("\n");
+
+     // get the user input from the second textarea
+     let userInput = document.getElementById("textarea2").value;
+
+     // split the user input by newline
+     let userInputArray = userInput.split("\n");
+
+      // create a string to display the comparison result
+      let result = "";
+
+      // create a set to store the user input strings
+      let userInputSet = new Set(userInputArray);
+
+      // loop through the parsed array and check if it is in the user input set
+      for (let i = 0; i < parsedArray.length; i++) {
+        // if the parsed string is not in the user input set, append it to the result string
+        if (!userInputSet.has(parsedArray[i])) {
+          result += parsedArray[i] + "\n";
+        }
+      }
+
+      // display the comparison result in the second result div
+      document.getElementById("result2").innerText = result;
+     
+   }
+</script>
+</body>
+</html>
