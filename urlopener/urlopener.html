@@ -1,0 +1,68 @@
+<html>
+<head>
+  <style>
+    #container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #textarea {
+      width: 80%;
+      height: 300px;
+      margin: 20px;
+    }
+
+    #button {
+      width: 100px;
+      height: 40px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1>URL Opener</h1>
+    <p>Enter a paragraphed list of URLs in the textarea below and click the button to open them in new tabs.</p>
+    <textarea id="textarea" placeholder="Enter URLs here..."></textarea>
+    <button id="button">Open</button>
+  </div>
+  <script>
+    // Get the textarea and button elements
+    var textarea = document.getElementById("textarea");
+    var button = document.getElementById("button");
+
+    // Add a click event listener to the button
+    button.addEventListener("click", function() {
+      // Get the value of the textarea
+      var text = textarea.value;
+
+      // Split the text by line breaks
+      var lines = text.split("\n");
+
+      // Loop through each line
+      for (var i = 0; i < lines.length; i++) {
+        // Get the current line
+        var line = lines[i];
+
+        // Trim any whitespace from the line
+        line = line.trim();
+
+        // Check if the line is a valid URL
+        if (isValidURL(line)) {
+          // Open the URL in a new tab
+          window.open(line, "_blank");
+        }
+      }
+    });
+
+    // A function to check if a string is a valid URL
+    function isValidURL(str) {
+      // Create a regular expression for URL validation
+      var regex = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i;
+
+      // Test the string against the regex
+      return regex.test(str);
+    }
+  </script>
+</html>
