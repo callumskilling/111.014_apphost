@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ID Multi-Opener</title>
+    <style>
+        body {
+            font-family: system-ui, Arial, Helvetica, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background: #030114
+        }
+
+        .card {
+            width: 100%;
+            max-width: 20rem;
+            padding: 1rem;
+            border-radius: 8px;
+            background: #d5d1fd;
+            box-shadow: 0 6px 1rem rgba(10, 10, 20, .06)
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #030114;
+        }
+
+        input {
+            width: 35%;
+            padding: 10px 12px;
+            font-size: 16px;
+            border: 1px solid #d8dbe0;
+            border-radius: 6px
+        }
+
+        .note {
+            margin-top: 10px;
+            color: #666;
+            font-size: 13px
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <form id="openForm">
+            <label for="idInput">Enter ID and press Enter</label>
+            <input id="idInput" name="id" autocomplete="off" placeholder="e.g. 12345" />
+        </form>
+    </div>
+
+
+    <script>
+        const dothe7 = [
+            'https://my.zandahealth.com/Profile/{id}/AdminCustomForms',
+            'https://my.zandahealth.com/Profile/{id}/Files',
+            'https://my.zandahealth.com/Profile/{id}/Referral',
+            'https://my.zandahealth.com/Profile/{id}/Insurer',
+            'https://my.zandahealth.com/Profile/{id}/PackInstance',
+            'https://my.zandahealth.com/Profile/{id}/Billing',
+            'https://my.zandahealth.com/Profile/{id}/Invoice'
+        ];
+
+        const form = document.getElementById('openForm');
+        const input = document.getElementById('idInput');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const id = input.value.trim();
+            if (!id) {
+                alert('Please enter an ID');
+                input.focus();
+                return;
+            }
+
+            // Build URLs, encoding the ID where appropriate
+            const urls = dothe7.map(t => t.replace(/\{id\}/g, encodeURIComponent(id)));
+
+            // Open each URL in a new tab. This is a user-initiated action so most browsers allow it.
+            urls.forEach(u => window.open(u, '_blank'));
+        });
+
+        // Optional: submit on Enter when input is focused
+        input.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') form.dispatchEvent(new Event('submit', { cancelable: true }));
+        });
+    </script>
+</body>
+
+</html>
